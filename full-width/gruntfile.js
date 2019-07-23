@@ -239,5 +239,4 @@ module.exports = function(grunt) {
   grunt.registerTask('remove-mq', ['cmq', 'cssmin']);
   grunt.registerTask('lint', ['csslint', 'lesslint']);
   grunt.registerTask('nano', ['cssnano']);
-
 };
