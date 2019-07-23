@@ -7,14 +7,17 @@
     "grunt": "~1.0",
     "grunt-browser-sync": "~2.2",
     "grunt-combine-media-queries": "^1.0.20",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-csslint": "~1.0",
     "grunt-contrib-cssmin": "~1.0",
     "grunt-contrib-imagemin": "~1.0",
-    "grunt-contrib-watch": "~1.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-criticalcss": "~1.0",
+    "grunt-css-wrap": "^0.1.3",
     "grunt-cssnano": "^2.1.0",
+    "grunt-dom-munger": "^3.4.0",
     "grunt-lesslint": "~3.2",
-    "grunt-uncss": "~0.5"
+    "grunt-uncss": "^0.8.6"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

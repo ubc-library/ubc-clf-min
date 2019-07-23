@@ -20,9 +20,9 @@
 <meta name="author" content="">
 <!-- Stylesheets -->
 <!-- our compressed version -->
-<!-- <link href="release/css/minimal-clf-7.0.4.css" rel="stylesheet"> -->
+ <link href="release/css/min-wrap-clf-7.0.4.css" rel="stylesheet">
 <!-- our unaltered version -->
-<link href="original-css/ubc-clf-full.min.css" rel="stylesheet">
+<!--<link href="original-css/ubc-clf-full.min.css" rel="stylesheet">-->
 <!-- <link href="original-css/unit.css" rel="stylesheet"> -->
 <!--[if lte IE 7]>
 <link href="https://cdn.ubc.ca/clf/7.0.4/css/font-awesome-ie7.css" rel="stylesheet">
@@ -41,7 +41,7 @@
 </head>
 <body class="full-width">
     <!-- UBC Global Utility Menu  *** MODIFIED TO EXPAND BY DEFAULT SO STYLES ARE PARSED *** -->
-    <div class="collapse in expand" id="ubc7-global-menu">
+    <span class="clf7"><div class=" collapse in expand" id="ubc7-global-menu">
         <div id="ubc7-search" class="expand">
         	<div class="container">
 	            <div id="ubc7-search-box">
@@ -59,10 +59,10 @@
 	            <!-- Global Utility Header from CDN -->
 	        </div>
         </div>
-    </div>
+		</div></span>
     <!-- End of UBC Global Utility Menu -->
     <!-- UBC Header -->
-    <header id="ubc7-header" class="row-fluid expand" role="banner">
+    <span class="clf7"><header id="ubc7-header" class=" row-fluid expand" role="banner">
     	<div class="container">
 	        <div class="span1">
 	            <div id="ubc7-logo">
@@ -85,10 +85,10 @@
 	            </div>
 	        </div>
 		</div>
-    </header>
+		</header></span>
     <!-- End of UBC Header -->
     <!-- UBC Unit Identifier -->
-    <div id="ubc7-unit" class="row-fluid expand">
+    <span class="clf7"><div id="ubc7-unit" class=" row-fluid expand">
     	<div class="container">
 	        <div class="span12">
 	            <!-- Mobile Menu Icon -->
@@ -107,10 +107,10 @@
 	            </div>
 	        </div>
 		</div>
-    </div>
+		</div></span>
     <!-- End of UBC Unit Identifier -->
     <!-- UBC Unit Navigation -->
-    <div id="ubc7-unit-menu" class="navbar expand" role="navigation">
+    <span class="clf7"><div id="ubc7-unit-menu" class="navbar expand" role="navigation">
         <div class="navbar-inner expand">
             <div class="container">
                 <div class="nav-collapse collapse" id="ubc7-unit-navigation">
@@ -137,11 +137,12 @@
                 </div><!-- /.nav-collapse -->
             </div>
         </div><!-- /navbar-inner -->
-    </div><!-- /navbar -->
+		</div></span><!-- /navbar -->
     <!-- End of UBC Unit Navigation -->
     <div class="full-width-container">
 	    <!-- UBC Unit Breadcrumbs -->
-	    <ul class="breadcrumb expand">
+			<span class="clf7">
+					    <ul class="breadcrumb expand">
 	        <li>
 	            <a href="#">Faculty Name</a> <span class="divider">/</span>
 	        </li>
@@ -150,6 +151,7 @@
 	        </li>
 	        <li class="active">Page Name</li>
 	    </ul>
+			</span>
 	    <!-- End of UBC Unit Breadcrumbs -->
 	    <!-- Content Area -->
 	    <div class="content expand" role="main">
@@ -187,7 +189,7 @@
 	    <!-- End of Content Area -->
     </div>
     <!-- Footer Area Unit Menu - Mobile Only -->
-    <div id="ubc7-unit-alternate-navigation" class="navbar expand visible-phone" role="navigation">
+    <span class="clf7"><div id="ubc7-unit-alternate-navigation" class=" navbar expand visible-phone" role="navigation">
         <div class="navbar-inner expand">
             <div class="container">
                 <div class="nav-collapse collapse">
@@ -214,9 +216,9 @@
                 </div><!-- /.nav-collapse -->
             </div>
         </div><!-- /navbar-inner -->
-    </div><!-- /navbar -->
+		</div><!-- /navbar --></span>
     <!-- End of Footer Area Unit Menu -->
-    <footer id="ubc7-footer" class="expand" role="contentinfo">
+    <span class="clf7"><footer id="ubc7-footer" class=" expand" role="contentinfo">
         <div class="row-fluid expand" id="ubc7-unit-footer">
         	<div class="container">
 	            <div class="span10" id="ubc7-unit-address">
@@ -265,7 +267,7 @@
 	            </div>
 			</div>
         </div>
-    </footer>
+		</footer></span>
     <!-- Placed javascript at the end for faster loading -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js"></script>

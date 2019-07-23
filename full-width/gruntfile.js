@@ -71,6 +71,38 @@ module.exports = function(grunt) {
         }
       }
     },
+  // -----------------------------------------------------------------------------
+// GRUNT-CSS-WRAP TASKS: namespace clf css with .clf7
+//
+// -----------------------------------------------------------------------------
+    css_wrap: {
+      compile: {
+        files: {
+            'uncompressed/css/min-wrap-clf-7.0.4.css': [ 'uncompressed/css/minimal-clf-7.0.4.css'],
+            'uncompressed/css/min-wrap-clf-7.0.4-bw.css' : [ 'uncompressed/css/minimal-clf-7.0.4-bw.css'],
+            'uncompressed/css/min-wrap-clf-7.0.4-gw.css' : [ 'uncompressed/css/minimal-clf-7.0.4-gw.css'],
+            'uncompressed/css/min-wrap-clf-7.0.4-wg.css' : [ 'uncompressed/css/minimal-clf-7.0.4-wg.css']
+          },
+          options: {
+            selector: ".clf7"
+          }
+        }
+    },
+// -----------------------------------------------------------------------------
+// CONCAT: add extra classes from wrap-root.css to wrapped files
+//
+// -----------------------------------------------------------------------------
+    concat: {
+      'uncompressed/css/min-wrap-clf-7.0.4.css': ['wrap-root.css', 'uncompressed/css/min-wrap-clf-7.0.4.css'],
+      'uncompressed/css/min-wrap-clf-7.0.4-bw.css': ['wrap-root.css', 'uncompressed/css/min-wrap-clf-7.0.4-bw.css'],
+      'uncompressed/css/min-wrap-clf-7.0.4-gw.css': ['wrap-root.css', 'uncompressed/css/min-wrap-clf-7.0.4-gw.css'],
+      'uncompressed/css/min-wrap-clf-7.0.4-wg.css': ['wrap-root.css', 'uncompressed/css/min-wrap-clf-7.0.4-wg.css']
+    },
+// -----------------------------------------------------------------------------
+// DOM_MUNGER: wrap .clf7 around clf page elements
+//
+// -----------------------------------------------------------------------------
+
 // -----------------------------------------------------------------------------
 // COMBINE MEDIA QUERIES TASKS
 //
@@ -85,6 +117,7 @@ module.exports = function(grunt) {
           }
         }
       },
+
 // -----------------------------------------------------------------------------
 // CSSMIN TASKS
 //
@@ -100,9 +133,15 @@ module.exports = function(grunt) {
           'release/css/minimal-clf-7.0.4-gw.css': ['uncompressed/css/minimal-clf-7.0.4-gw.css'],
           'release/css/minimal-clf-7.0.4-wg.css': ['uncompressed/css/minimal-clf-7.0.4-wg.css'],
           'release/css/cmq/minimal-clf-7.0.4.css': ['release/cmq/minimal-clf-7.0.4.css'],
+
           'release/css/cmq/minimal-clf-7.0.4-bw.css': ['release/cmq/minimal-clf-7.0.4-bw.css'],
           'release/css/cmq/minimal-clf-7.0.4-gw.css': ['release/cmq/minimal-clf-7.0.4-gw.css'],
-          'release/css/cmq/minimal-clf-7.0.4-wg.css': ['release/cmq/minimal-clf-7.0.4-wg.css']
+          'release/css/cmq/minimal-clf-7.0.4-wg.css': ['release/cmq/minimal-clf-7.0.4-wg.css'],
+
+          'release/css/min-wrap-clf-7.0.4.css': ['uncompressed/css/min-wrap-clf-7.0.4.css'],
+          'release/css/min-wrap-clf-7.0.4-bw.css': ['uncompressed/css/min-wrap-clf-7.0.4-bw.css'],
+          'release/css/min-wrap-clf-7.0.4-gw.css': ['uncompressed/css/min-wrap-clf-7.0.4-gw.css'],
+          'release/css/min-wrap-clf-7.0.4-wg.css': ['uncompressed/css/min-wrap-clf-7.0.4-wg.css']
         }
       }
     },
@@ -176,7 +215,6 @@ module.exports = function(grunt) {
             }
         }
     }
-    
   });
   
 
@@ -191,10 +229,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-cssnano');
+  grunt.loadNpmTasks('grunt-css-wrap');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   // Default task(s) - we bundle the tasks here with easily memorable names. Default is run when nothing else it specified [ie. 'grunt' as opposed to 'grunt lint'].
   grunt.registerTask('default', ['browserSync', 'watch']);
   grunt.registerTask('optimize', ['uncss', 'cssmin']);
+  grunt.registerTask('wrapped', ["uncss", "css_wrap", "concat", "cssmin"]);  // --> create namespaced CLF styles: use "wrapped" html.
   grunt.registerTask('remove-mq', ['cmq', 'cssmin']);
   grunt.registerTask('lint', ['csslint', 'lesslint']);
   grunt.registerTask('nano', ['cssnano']);
