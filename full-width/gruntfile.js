@@ -216,6 +216,9 @@ module.exports = function(grunt) {
         }
     }
   });
+
+  const $ = require('cheerio');
+  grunt.registerTask('wrap_element', 'wrap html element', {})
   
 
   // Load the plugins.

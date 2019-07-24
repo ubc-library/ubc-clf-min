@@ -1,16 +1,3 @@
-/* clf elements need these to display properly when namespaced under '.clf7' */
-.clf7 {
-    /* clf global font settings */
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    color: #333;
-}
-html {
-    font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
 /*** uncss> filename: original-css/ubc-clf-full.min.css ***/
 
 /*!

@@ -4,6 +4,7 @@
   "description": "Creating a minimal version of the CLF's CSS and JS (full-width version)",
   "main": "sample.html",
   "devDependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "grunt": "~1.0",
     "grunt-browser-sync": "~2.2",
     "grunt-combine-media-queries": "^1.0.20",
